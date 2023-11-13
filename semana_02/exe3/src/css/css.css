@@ -1,0 +1,22 @@
+#container{
+    border: 10px solid brown;
+    background-color: blue;
+}
+
+.bloco1 , .bloco2{
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.branco{
+    color: white;
+    background-color: red;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.amarelo{
+    color: yellow;
+    margin: 0;    
+}
