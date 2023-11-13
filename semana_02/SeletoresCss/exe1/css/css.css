@@ -1,0 +1,60 @@
+body {
+    background-color: aliceblue;
+}
+
+#container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto Slab', serif;
+}
+
+#g1 {
+    color: red;
+}
+
+#olhardigital {
+    color: blue;
+    font-size: 24px;
+}
+
+#uol {
+    color: green;
+    font-weight: bold;
+    font-size: 29px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#Circulo {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+}
+#Everlan {
+    text-align: center;
+    position: relative;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.quadrado {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+#quadrado1 {
+    float: left;
+}
+
+#quadrado2 {
+    float: right;
+    clear: both;
+}
