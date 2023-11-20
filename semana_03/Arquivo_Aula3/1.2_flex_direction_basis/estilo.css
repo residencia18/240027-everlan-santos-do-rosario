@@ -1,0 +1,35 @@
+.container {
+    display: inline-flex;
+    flex-direction: column; 
+    gap: 10px;
+    /*
+    display: flex;
+    flex-direction: row;
+    flex-basis: 150px; no item
+    */
+}
+
+.container > div {
+    flex-basis: 50px;
+    text-align: center;
+}
+
+.A{
+    background-color: #D0A2F7;
+}
+
+.B{
+    background-color:#DCBFFF;
+}
+
+.C{
+    background-color:#E5D4FF;
+}
+
+.D{
+    background-color:#F1EAFF;
+}
+
+*{
+    background-color:#FFFBF5;
+}

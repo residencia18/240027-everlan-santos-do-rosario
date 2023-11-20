@@ -1,0 +1,29 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: aliceblue;
+}
+
+.container-destinos{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img{
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.roteiros-viagens{
+    width: 250px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.roteiro-destino{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
