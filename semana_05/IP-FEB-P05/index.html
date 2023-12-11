@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/css.css">
+    <title>UESC</title>
+    <link rel="shortcut icon" href="http://www.uesc.br/faviconsite.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+    <script
+        src="https://api.openweathermap.org/data/2.5/weather?q=Ilh%C3%A9us,br&appid=2632638ccd455174294b5b12c50bad5b"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav1">
+                <a href="http://www.ba.gov.br/" target="_blank"></a>
+            </nav>
+
+            <div class="logo">
+
+            </div>
+        </header>
+        <main>
+            <div class="Menu">
+                <h1>Menu</h1>
+                <hr>
+                <ul>
+                    <li><a href="../centros">Centros e Grupos de Pesquisa</a></li>
+                    <li><a href="../arint">Cooperação Internacional</a></li>
+                    <li><a href="../laboratorios">Laboratórios</a></li>
+                    <li><a href="../mapa/uesc-map2013.pdf" target="_blank">Mapa da UESC</a></li>
+                    <li><a href="../nucleos">Núcleos</a></li>
+                    <li><a href="../projetos">Projetos</a></li>
+                    <li><a href="http://www.uesc.br/proad/index.php?item=conteudo_gera_requerimento_academico.php">Protocolo
+                            Digital</a></li>
+                </ul>
+                <ul>
+                    <h3>Estrutura Organizacional </h3>
+                    <li><a href="../reitoria/index.php">Reitoria</a></li>
+                    <li><a href="../colegiados/index.php">Colegiados</a></li>
+                    <li><a href="../departamentos/index.php">Departamentos</a></li>
+                </ul>
+            </div>
+            <div class="Noticias">
+                <h1>Notícias da UESC</h1>
+                <hr>
+                <article class="Noticia">
+                    <h2>Descobertas Científicas na Área de Biologia</h2>
+                    <p>
+                        Uma equipe de pesquisadores da UESC fez recentes descobertas na área de biologia, revelando
+                        novos insights sobre a biodiversidade na região. Os resultados dessas pesquisas têm o potencial
+                        de impactar positivamente a compreensão da ecologia local.
+                    </p>
+                    <a href="https://www.uesc.br/noticias/noticias-da-uesc/descobertas-cientificas-na-area-de-biologia">Saiba
+                        mais</a>
+                </article>
+
+                <article class="Noticia">
+                    <h2>Parceria Internacional para Pesquisa em Tecnologia</h2>
+                    <p>
+                        A UESC estabeleceu uma parceria estratégica com uma renomada instituição internacional de
+                        pesquisa em tecnologia. Essa colaboração promete avanços significativos em projetos conjuntos,
+                        abrangendo desde inteligência artificial até novas tecnologias sustentáveis.
+                    </p>
+                    <a
+                        href="https://www.uesc.br/noticias/noticias-da-uesc/parceria-internacional-para-pesquisa-em-tecnologia">Saiba
+                        mais</a>
+                </article>
+
+                <article class="Noticia">
+                    <h2>Evento Científico Internacional na UESC</h2>
+                    <p>
+                        A UESC sediará um evento científico internacional de grande relevância para a área de
+                        biotecnologia. O evento contará com a participação de pesquisadores de renome mundial e será uma
+                        oportunidade única para a comunidade acadêmica da UESC se aproximar das últimas tendências da
+                        pesquisa em biotecnologia.
+                    </p>
+                    <a href="https://www.uesc.br/noticias/noticias-da-uesc/evento-cientifico-internacional-na-uesc">Saiba
+                        mais</a>
+                </article>
+            </div>
+            <div class="Destaques">
+                <h1>Artigos em Destaque</h1>
+                <hr>
+                <div class="imgDestaque">
+                    <img src="src/img/image.png" alt="">
+                </div>
+                <div class="imgDestaque">
+                    <img src="src/img/image.png" alt="">
+                </div>
+                <div class="artigos-destaques">
+                    
+                </div>
+            </div>
+
+            <div class="Servicos">
+                <h1>Nossos Serviços</h1>
+                <hr>
+                <section class="Servico">
+                    <h2>Previsão do Tempo</h2>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Temperatura</h2>
+                            <p id="temperature"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Umidade</h2>
+                            <p id="humidity"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Velocidade do vento</h2>
+                            <p id="windSpeed"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Descrição do tempo</h2>
+                            <p id="weatherDescription"></p>
+                        </div>
+                    </div>
+                    <hr>
+                </section>
+                <section class="Servico">
+                    <h2>Assessoria Acadêmica</h2>
+                    <p>Oferecemos suporte acadêmico abrangente, incluindo orientação de carreira, aconselhamento
+                        acadêmico e
+                        assistência para escolha de disciplinas.</p>
+                </section>
+
+                <section class="Servico">
+                    <h2>Biblioteca Online</h2>
+                    <p>Acesse nossa vasta coleção de recursos online, incluindo livros digitais, artigos científicos
+                        e
+                        materiais de estudo para enriquecer sua pesquisa e aprendizado.</p>
+                </section>
+
+                <section class="Servico">
+                    <h2>Programas de Intercâmbio</h2>
+                    <p>Explore o mundo com nossos programas de intercâmbio. Conecte-se com universidades parceiras
+                        em
+                        todo o
+                        mundo e amplie suas experiências acadêmicas e culturais.</p>
+                </section>
+
+            </div>
+
+            <div class="Resultados">
+                <h1>Resultados Recentes</h1>
+                <hr>
+                <article class="Resultado">
+                    <h2>Desempenho dos Alunos na Competição Nacional</h2>
+                    <p>Estamos orgulhosos de compartilhar os excelentes resultados alcançados pelos nossos alunos na
+                        última
+                        competição nacional. Vários estudantes da UESC se destacaram em diversas categorias,
+                        demonstrando a
+                        qualidade da nossa educação.</p>
+                </article>
+
+                <article class="Resultado">
+                    <h2>Pesquisa Inovadora Reconhecida Internacionalmente</h2>
+                    <p>Nossa equipe de pesquisa recebeu reconhecimento internacional por contribuições inovadoras em
+                        suas
+                        respectivas áreas. Essa conquista destaca a excelência da pesquisa na UESC e seu impacto
+                        global.
+                    </p>
+                </article>
+
+                <article class="Resultado">
+                    <h2>Índices de Satisfação do Aluno em Alta</h2>
+                    <p>Os resultados recentes das pesquisas de satisfação do aluno mostram que a UESC continua a ser
+                        altamente avaliada pelos estudantes. Estamos comprometidos em fornecer um ambiente
+                        educacional
+                        de
+                        qualidade e atender às necessidades dos nossos alunos.</p>
+                </article>
+            </div>
+        </main>
+        <footer>
+            UNIVERSIDADE ESTADUAL DE SANTA CRUZ<br>
+            Campus Soane Nazaré de Andrade, Rodovia Jorge Amado, km 16, Bairro Salobrinho <br>
+            CEP 45662-900. Ilhéus-Bahia
+            <br>
+
+            <a href="http://www.uesc.br/nucleo-web/">Núcleo Web</a>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="src/js/js.js"></script>
+    <script src="src/js/ts/ts.js"></script>
+</body>
+
+</html>

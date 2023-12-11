@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+}
+hr{
+  height: 3px;
+  background-color: rgb(51, 152, 235);
+}
+.container {
+  width: 1100px;
+  height: auto;
+  margin: 0 auto;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 20%;
+  grid-template-rows: repeat(2, 1fr);
+}
+header {
+  grid-row-start: 1;
+  height: 269px;
+  width: 100%;
+}
+.Menu {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  font-family: "Bebas Neue", sans-serif;
+}
+.Menu ul {
+  list-style-type: none;
+}
+.Menu li {
+  margin-top: 10px;
+  background-color: white;
+  padding: 10px;
+}
+.Menu li:hover {
+  background-color: rgb(51, 152, 235);
+}
+.Menu a {
+  text-decoration: none;
+  color: black;
+}
+.Noticias {
+  grid-template-rows: 1fr;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  font-family: "Merriweather", serif;
+}
+.Destaques {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-template-rows: 20%;
+}
+.imgDestaque {
+  width: auto;
+  margin-top: 10px;
+}
+.imgDestaque img {
+  width: 100%;
+  height: 25%;
+  object-fit: contain;
+}
+
+.Menu,
+.Noticias,
+.Destaques {
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 10px;
+  border: 2px solid black;
+}
+.Servicos,
+.Resultados {
+  margin-top: 5px;
+  border: 2px solid black;
+  padding: 10px;
+}
+.Servicos {
+  grid-template-rows: 1fr;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  margin-right: 5px;
+}
+.Resultados {
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 2;
+  grid-template-columns: 400px;
+}
+footer {
+  text-align: center;
+  background-color: #000066;
+  color: white;
+  margin-top: 10px;
+  bottom: 0;
+  padding: 10px;
+  border-top: 5px solid #ffcc00;
+  position: fixed;
+  width: 1080px;
+}
+.nav1 {
+  width: 100%;
+  background-image: url(https://web-bahia.ba.gov.br/instbar/images/bg-controls-acessbar-tematicos.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 18%;
+}
+.nav1 a {
+  overflow: hidden;
+  background-image: url(https://web-bahia.ba.gov.br/images/OLD_brasao-bahia-106x36.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 1%;
+  left: 18%;
+  width: 7%;
+  height: auto;
+}
+
+.logo {
+  background-image: url(http://www.uesc.br/tema/uesc/imagens/new_topo_princ_uesc_01.jpg);
+  background-size: contain;
+  background-image: no-repeat;
+  width: 100%;
+  height: 82%;
+}
+
+@media (max-width: 500px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}

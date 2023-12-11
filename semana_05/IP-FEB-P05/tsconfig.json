@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "./src/js",
+      "rootDir": "./src",
+      "strict": true,
+      "moduleResolution": "node",
+      "allowJs": true,
+      "lib": ["es6", "dom"],
+      "types": ["jquery"]
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+}
+  
