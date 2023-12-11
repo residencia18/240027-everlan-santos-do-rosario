@@ -1,0 +1,8 @@
+<h1 [style.color]="cor">{{ nome }}</h1>
+<p>{{ descricao }}</p>
+<img [src]="imagem"/>
+<br>
+<input type="text" [(ngModel)]="cor" />
+<label for="txtEvent" >Digite a cor</label>
+<input type="text" (input)="Digitando cor $event"/>
+<label for="txtEvent" >Digite o nome</label>
