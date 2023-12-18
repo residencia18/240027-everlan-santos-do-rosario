@@ -1,8 +1,12 @@
 <h1 [style.color]="cor">{{ nome }}</h1>
-<p>{{ descricao }}</p>
-<img [src]="imagem"/>
+
+<p appNegrito corInput="brawn">{{ descricao }}</p>
+
+<img  [src]="imagem"/>
+
 <br>
 <input type="text" [(ngModel)]="cor" />
 <label for="txtEvent" >Digite a cor</label>
-<input type="text" (input)="Digitando cor $event"/>
-<label for="txtEvent" >Digite o nome</label>
+<input type="text" (input)="Digitandocor($event)" [(ngModel)]="permissao"/>
+<button (click)="alterarCor()">Alterar cor</button>
+<h2 *appEstruturaSome=3>Cor atual: {{ corInput }}</h2>

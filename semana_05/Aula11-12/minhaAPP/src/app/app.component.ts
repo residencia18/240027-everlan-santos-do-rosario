@@ -3,12 +3,21 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TabelaComponent } from './tabela/tabela.component';
 import { AraraComponent } from './arara/arara.component';
+import { NegritoDirective } from './negrito.directive';
+import { EstruturaSomeDirective } from './estrutura-some.directive';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TabelaComponent, AraraComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    TabelaComponent,
+    AraraComponent,
+    NegritoDirective,
+    EstruturaSomeDirective
+  ],
   //template: '<app-arara></app-arara><app-tabela></app-tabela>',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
