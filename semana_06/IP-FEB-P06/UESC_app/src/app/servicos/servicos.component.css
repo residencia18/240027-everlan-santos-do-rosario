@@ -1,0 +1,9 @@
+.Servicos {
+    grid-template-rows: 1fr;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: 2px solid black;
+    padding: 10px;
+}

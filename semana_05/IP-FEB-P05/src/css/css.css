@@ -20,6 +20,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 20%;
   grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 120px;
 }
 header {
   grid-row-start: 1;

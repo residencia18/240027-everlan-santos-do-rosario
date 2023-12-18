@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="roteiro-preco">R$${preco}</div>
             <div class="roteiro-obs">${obs}</div>
             <div class="roteiro-parcelamento">${parcelamento.join('<br>')}</div>
-            <button class="roteiro-comprar">Comprar</button>
+            <button class="roteiro-comprar" onclick="capturarInformacoes(event)">Comprar</button>
         </div>
         `;
 

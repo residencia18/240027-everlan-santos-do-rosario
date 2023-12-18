@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+hr {
+  height: 3px;
+  background-color: rgb(51, 152, 235);
+}
+.container {
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+
+header {
+  grid-row-start: 1;
+  height: 269px;
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  background-color: #000066;
+  color: white;
+  margin-top: 10px;
+  bottom: 0;
+  padding: 10px;
+  border-top: 5px solid #ffcc00;
+  position: fixed;
+  width: 1080px;
+}
+.nav1 {
+  width: 100%;
+  background-image: url(https://web-bahia.ba.gov.br/instbar/images/bg-controls-acessbar-tematicos.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 18%;
+}
+.nav1 a {
+  overflow: hidden;
+  background-image: url(https://web-bahia.ba.gov.br/images/OLD_brasao-bahia-106x36.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 1%;
+  left: 18%;
+  width: 7%;
+  height: auto;
+}
+
+.logo {
+  background-image: url(http://www.uesc.br/tema/uesc/imagens/new_topo_princ_uesc_01.jpg);
+  background-size: contain;
+  background-image: no-repeat;
+  width: 100%;
+  height: 82%;
+}
+

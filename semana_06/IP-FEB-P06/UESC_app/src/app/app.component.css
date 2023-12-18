@@ -1,0 +1,14 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 20%;
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 120px;
+}
+
+@media (max-width: 500px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}

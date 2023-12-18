@@ -1,0 +1,9 @@
+.Resultados {
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-template-columns: 400px;
+    margin-top: 5px;
+    border: 2px solid black;
+    padding: 10px;
+}

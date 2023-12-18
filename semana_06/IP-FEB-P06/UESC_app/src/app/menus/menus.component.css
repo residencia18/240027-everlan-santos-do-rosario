@@ -1,0 +1,28 @@
+.Menu {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  .Menu ul {
+    list-style-type: none;
+  }
+  .Menu li {
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+  }
+  .Menu li:hover {
+    background-color: rgb(51, 152, 235);
+  }
+  .Menu a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .Menu{
+    margin-top: 10px;
+    margin-right: 5px;
+    padding: 10px;
+    border: 2px solid black;
+  }
