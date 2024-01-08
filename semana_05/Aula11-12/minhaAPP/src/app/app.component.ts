@@ -5,6 +5,7 @@ import { TabelaComponent } from './tabela/tabela.component';
 import { AraraComponent } from './arara/arara.component';
 import { NegritoDirective } from './negrito.directive';
 import { EstruturaSomeDirective } from './estrutura-some.directive';
+import { DemoPipePipe } from './demo-pipe.pipe';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { EstruturaSomeDirective } from './estrutura-some.directive';
     TabelaComponent,
     AraraComponent,
     NegritoDirective,
-    EstruturaSomeDirective
+    EstruturaSomeDirective,
+    DemoPipePipe
   ],
   //template: '<app-arara></app-arara><app-tabela></app-tabela>',
   templateUrl: './app.component.html',
