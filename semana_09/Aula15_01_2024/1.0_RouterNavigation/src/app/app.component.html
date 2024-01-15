@@ -1,0 +1,25 @@
+<a href="/aviao">Avião</a>
+<br/>
+<a href="/carro">Carro</a>
+<br/>
+<a href="/barco">Barco</a>
+<br/>
+<hr/>
+<br/>
+<a routerLink="/aviao" routerLinkActive="ativo">Avião</a>
+<br/>
+<a routerLink="/carro" routerLinkActive="ativo">Carro</a>
+<br/>
+<a routerLink="/barco" routerLinkActive="ativo">Barco</a>
+<br/>
+<hr>
+<button (click)="paraAviao()">Mostrar Aviao</button>
+<hr>
+<!-- <input type="text" (input)="onInputChange($event)" name="idTexto">
+
+<a [routerLink]="['/animal', inputText]"
+   [queryParams]="{order: 'pesados', vacinados: 'true'}" routerLinkActive="ativo">Para animal</a> -->
+
+<a [routerLink]="['/animal']" routerLinkActive="ativo">Para animal</a>
+
+<router-outlet></router-outlet>

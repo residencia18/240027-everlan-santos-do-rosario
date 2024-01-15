@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <td>id para editar</td>
+    </tr>
+</table>
+
+
+<input type="text" (input)="onInputChange($event)" name="idTexto">
+<a [routerLink]="['/animal', inputText, 'editar']"
+   [queryParams]="{order: 'pesados', vacinados: 'true'}" routerLinkActive="ativo">Editar</a>
+
+<router-outlet></router-outlet>
