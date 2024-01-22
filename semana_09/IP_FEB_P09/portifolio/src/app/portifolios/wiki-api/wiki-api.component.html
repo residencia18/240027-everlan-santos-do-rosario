@@ -1,1 +1,19 @@
-<p>wiki-api works!</p>
+<div class="container">
+    <h1>Consultando a Wiki API</h1>
+    <div class="search-form">
+      <form (submit)="buscar()" method="get">
+        <div class="input-group">
+          <input [(ngModel)]="termos" type="text" name="termos" class="form-control input-lg rounded-pill">
+          <div class="input-group-btn ms-3">
+            <button class="btn btn-lg btn-primary">
+              Buscar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngFor="let result of resultados" class="search-form">
+      <h3><a href="https://en.wikipedia.org/wiki?curid={{result.pageid}}">{{result.title}}</a></h3>
+      <p [innerHtml]="result.snippet"></p>
+    </div>
+  </div>
