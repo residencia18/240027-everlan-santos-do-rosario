@@ -1,0 +1,34 @@
+<div *ngFor="let usuario of usuarios">
+    <p>{{ usuario.login }}</p>
+  </div>
+
+
+<h1>Observable Valores</h1>
+<button (click)="getValores()">Get Valores</button> 
+  <div *ngFor="let valor of valores">
+    <p>{{ valor }}</p>
+</div>
+
+<h1>Observable Valores 2</h1>
+<p></p>
+<button (click)="getValores2()">Get Valores 2</button> 
+  <div *ngFor="let valor of valores2">
+    <p>{{ valor }}</p>
+  </div>
+
+<h1>Observable Soma de Valores</h1>
+<button (click)="getSomadeValores()">Get Valores</button> 
+<h2>{{somaDeValores}}</h2>
+
+<h1>Observable get Numeros com varios operadores</h1>
+<button (click)="getNumeros()">Get Numeros</button> 
+<h2>{{numeros}}</h2>
+
+
+<h1>getPaises</h1>
+<button (click)="getPaises()">Get paises</button> 
+
+
+  <div *ngFor="let valor of paisPopulacao">
+    <p>{{ valor.pais }}</p>
+</div>

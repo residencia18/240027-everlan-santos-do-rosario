@@ -1,0 +1,8 @@
+<mat-toolbar color="primary" class="mat-elevation-z8" *ngIf="isLogado">
+    <span>Autenticação</span>
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button [routerLink]="['/usuarios']">Usuários</button>
+    <button mat-button routerLink="/sobre">Sobre</button>
+    <span class="example-spacer"></span>
+    <button mat-button (click)="onLogout()">Logouts</button>
+  </mat-toolbar>

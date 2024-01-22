@@ -1,0 +1,12 @@
+
+
+<app-tool-bar></app-tool-bar>
+<router-outlet></router-outlet>
+<div class="container mat-elevation-z1">
+  <div *ngFor="let pessoa of pessoas; let i = index" class="item" [class.alternate]="i % 2 === 1"  (click)="editUsuario(pessoa.id)"> 
+    <h2 class="mat-primary">{{ pessoa.nome }}</h2>
+    <p>{{ pessoa.email }}</p>
+  </div>
+</div>
+
+

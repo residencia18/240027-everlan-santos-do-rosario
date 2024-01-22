@@ -1,0 +1,16 @@
+
+<form (ngSubmit)="salvarUsuario(usuario.nome, usuario.email, usuario.password)">
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="usuario.nome" name="nome" (input)="AlterouTexto()">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="usuario.email" name="email">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput [(ngModel)]="usuario.password" name="password" type="password">
+  </mat-form-field>
+  <button mat-raised-button type="submit">Salvar</button>
+</form>

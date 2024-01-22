@@ -1,0 +1,23 @@
+<h1>app componente</h1>
+
+<button (click)="autenticar()">Autenticar Usuário</button>
+<button (click)="desautenticar()">Logout</button>
+
+<hr>
+<h3>Status: {{autenticado}}</h3>
+
+<br/>
+<hr>
+<h1>Contador com Subject</h1>
+<button (click)="iniciarContador()">Iniciar Contador</button>
+<button (click)="pararContador()">Parar Contador</button>
+<h2>{{numero}}</h2>
+<br/>
+<br/>
+<hr>
+<app-contador></app-contador>
+<app-contador2></app-contador2>
+<hr>
+<h1>Contador com Observables</h1>
+<app-contador-obs3></app-contador-obs3>
+<app-contador-obs4></app-contador-obs4>
