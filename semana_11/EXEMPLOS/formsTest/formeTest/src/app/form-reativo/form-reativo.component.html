@@ -1,0 +1,29 @@
+<div class="content">
+    <form id="estacaoForm" class="form" [formGroup]="etacaoForm" (ngSubmit)="onSubmit()"]>
+        <label for="nome" class="form-label" >Nome:</label>
+        <input class="form-control" type="text" formControlName="nome" name="nome" placeholder="Nome" required ngModel #nome="ngModel"/>
+        <span class="alert alert-danger" *ngIf="!nome.valid && nome.touched">
+            Nome inválido! Nome requerido.
+        </span>
+
+        <label for="email" class="form-label" >Email:</label>
+        <input class="form-control" type="email" formControlName="email" name="email" placeholder="Email" required ngModel #email="ngModel"/>
+        <span class="alert alert-danger" *ngIf="!email.valid && email.touched">
+            Email inválido! Email requerido.
+        </span>
+
+        <label for="localizacao" class="form-label" >Localização:</label>
+        <input class="form-control" type="text" formControlName="localizacao" name="localizacao" placeholder="Localização" required ngModel #localizacao="ngModel"/>
+        <span class="alert alert-danger" *ngIf="!localizacao.valid && localizacao.touched">
+            Localização inválida! Localização requerida.
+        </span>
+
+        <select class="form-select" formControlName="status" name="status">
+            <option value="0">Não instalado</option>
+            <option value="1">Instalado</option>
+            <option value="2">Operante</option>
+        </select>
+        
+        <button class="btn btn-primary btn-lg" [disabled]="!LoginForm.valid" type="submit">Entrar</button>
+    </form>
+</div>

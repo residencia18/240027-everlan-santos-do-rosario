@@ -1,0 +1,20 @@
+<div class="content">
+    <form id="LoginForm" class="form" (ngSubmit)="onSubmit(LoginForm)" #LoginForm="ngForm">
+
+        <label for="login" class="form-label">Login:</label>
+        <input class="form-control" type="text" name="login" placeholder="Login" required ngModel #login="ngModel"/>
+        <span class="alert alert-danger" *ngIf="!login.valid && login.touched">
+            Login inválido! Login requerido.
+        </span>
+
+        <label for="password" class="form-label">Senha:</label>
+        <input class="form-control" type="password" name="senha" placeholder="Senha" required ngModel maxlength="8" minlength="6" #password="ngModel" />
+
+        <span class="alert alert-danger" *ngIf="!password.valid && password.touched">
+            Senha inválido! Deve ter no minimo 6 e no maximo 8 caracteres
+        </span>
+
+        <button class="btn btn-primary btn-lg" [disabled]="!LoginForm.valid" type="submit">Entrar</button>
+
+    </form>
+</div>
