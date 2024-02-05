@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './form-reativo.component.css'
 })
 export class FormReativoComponent {
-
+  
 }
