@@ -1,0 +1,100 @@
+<div class="container">
+    
+    <div class="row">
+
+        <div class="col">
+            <h1>Atendimento</h1>
+            <p>Faça seu atendimento</p>
+            <img src="https://i.pinimg.com/736x/94/b8/64/94b86450b371930a315bd305140d63f5.jpg" alt="">
+        </div>
+
+        <div class="col">
+            <h1>Dados do cliente</h1>
+            <form [formGroup]="atendimentoForm" (ngSubmit)="onSubmit()" class="form-group" >
+                <label for="nomepai">Nome Pai Pet</label>
+                <input id="nomepai" placeholder="Nome Pai Pet" type="text" class="form-control" name="nomepai">
+                <span class="alert alert-danger" *ngIf="!atendimentoForm.get('nomepai')?.valid && atendimentoForm.get('nomepai')?.touched">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                            <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        Por favor, insira o nome do seu pai
+                    </div>
+                </span>
+
+                <label for="telefone">Telefone</label>
+                <input id="telefone" placeholder="Telefone" type="text" class="form-control" name="telefone">
+                <span class="alert alert-danger" *ngIf="!atendimentoForm.get('nomepai')?.valid && atendimentoForm.get('nomepai')?.touched">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                            <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        Telefone Requerido !! Por favor, insira um telefone válido (XX X XXXX-XXXX).
+                    </div>
+                </span>
+
+                <h3>Dados do pet</h3>
+
+                <label for="nomepet">Nome</label>
+                <input id="nomepet" placeholder="Nome" type="text" class="form-control" name="nomepet">
+                <span class="alert alert-danger" *ngIf="!atendimentoForm.get('nomepai')?.valid && atendimentoForm.get('nomepai')?.touched">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                            <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        Por favor, insira o nome do seu pet
+                    </div>
+                </span>
+
+                <label for="especie">Especie</label>
+                <select name="especie" id="especie" class="form-control">
+                    <option value="outros">Outros</option>
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                    <option value="peixe">Peixe</option>
+                </select>
+                <span class="alert alert-danger" *ngIf="!atendimentoForm.get('nomepai')?.valid && atendimentoForm.get('nomepai')?.touched">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                            <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        Por favor, Informe a especie
+                    </div>
+                </span>
+
+                <label for="idade">Idade</label>
+                <input id="idade" placeholder="Idade" type="number" class="form-control" name="idade">
+                <span class="alert alert-danger" *ngIf="!atendimentoForm.get('nomepai')?.valid && atendimentoForm.get('nomepai')?.touched">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                            <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        Por favor, Informe a idade
+                    </div>
+                </span>
+
+                <label for="historico">Historico</label>
+                <input id="historico" placeholder="Historico" type="text" class="form-control" name="historico">
+                <span class="alert alert-danger" *ngIf="!atendimentoForm.get('nomepai')?.valid && atendimentoForm.get('nomepai')?.touched">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                            <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        Por favor, Informe o historico
+                    </div>
+                </span>
+
+                <button class="btn btn-primary" [disabled]="!atendimentoForm.valid" type="submit">Cadastrar</button>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
