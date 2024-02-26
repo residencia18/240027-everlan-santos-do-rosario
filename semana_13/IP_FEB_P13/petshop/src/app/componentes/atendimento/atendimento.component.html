@@ -11,7 +11,7 @@
         <div class="col">
             <h1>Dados do cliente</h1>
             <form [formGroup]="atendimentoForm" (ngSubmit)="onSubmit()" class="form-group" >
-                <label for="nomepai">Nome Pai Pet</label>
+                <label for="nomepai">Nome Responsável Pet</label>
                 <input id="nomepai" placeholder="Nome Pai Pet" type="text" class="form-control" name="nomepai">
                 <span class="alert alert-danger" *ngIf="!atendimentoForm.get('nomepai')?.valid && atendimentoForm.get('nomepai')?.touched">
                     <div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { FormGroup, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   imports: [
     CommonModule,
     RouterOutlet,
-    RouterLink
+    RouterLink,
+    FormsModule,    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
