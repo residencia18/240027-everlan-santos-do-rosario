@@ -131,4 +131,9 @@ public class LanceController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+	
+	@DeleteMapping("/")
+	public ResponseEntity<?> deleteLance() {
+		return ResponseEntity.badRequest().build();
+	}
 }
