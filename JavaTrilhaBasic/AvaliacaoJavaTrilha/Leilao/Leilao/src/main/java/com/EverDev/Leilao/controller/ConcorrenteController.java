@@ -85,9 +85,9 @@ public class ConcorrenteController {
 			Concorrente concorrente = concorrenteRepository.getReferenceById(id);
 			if (concorrente == null) {
 				return ResponseEntity.notFound().build();
-			}
+			}			
 			concorrenteRepository.delete(concorrente);
-			return ResponseEntity.ok().build();
+			return ResponseEntity.ok(new ConcorrenteDTO(concorrente));
 		}catch (Exception e) {
 			return ResponseEntity.notFound().build();
 		}
