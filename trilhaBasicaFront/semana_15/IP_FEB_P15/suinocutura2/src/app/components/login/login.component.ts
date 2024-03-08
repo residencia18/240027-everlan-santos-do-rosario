@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../service/auth.service';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -20,7 +22,7 @@ export class LoginComponent {
   loginForm: FormGroup;
   googleRegexemail: RegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private rotas: Router) {
     
     this.loginForm = new FormGroup({
       email: new FormControl ('', [Validators.required, Validators.pattern(this.googleRegexemail)]),
@@ -37,7 +39,9 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const email = this.loginForm.get('email')?.value;
       const password = this.loginForm.get('password')?.value;
-      this.authService.signIn(email, password);
+      if (this.authService.signIn(email, password) !== null) {
+        this.rotas.navigate(['home']);
+      }
     }else{
       this.onReset();
     }
