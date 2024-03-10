@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { AuthService } from '../../service/auth.service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cad-user',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
-    CommonModule
+    RouterLink
   ],
   templateUrl: './cad-user.component.html',
   styleUrl: './cad-user.component.css'
@@ -23,11 +23,21 @@ export class CadUserComponent {
   erro: boolean = false;
   msgErro: string = '';
 
-  constructor(private authService: AuthService, private rotas: Router) {
+  constructor(public authService: AuthService, private rotas: Router) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.pattern(this.googleRegexemail)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(13)]),
       password2: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(13)]),
+    })
+  }
+
+  ngOnInit() {
+    this.authService.user$.subscribe((user) => {
+      if (user) {
+        this.authService.currentUserSing.set(user);
+      }else {
+        this.authService.currentUserSing.set(null);
+      }
     })
   }
 
@@ -48,9 +58,12 @@ export class CadUserComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       if(this.equalPassword(this.loginForm)?.['equalPassword'] === true){
+        this.erro = false;
+        this.msgErro = '';
         this.onSingUp();
       }else{
-        alert('As senhas devem ser iguais');
+        this.erro = true;
+        this.msgErro = 'As senhas precisam ser iguais';
       }
     }
   }
@@ -60,16 +73,20 @@ export class CadUserComponent {
       const email = this.loginForm.get('email')?.value;
       const password = this.loginForm.get('password')?.value;
       const result = await (this.authService.signUp(email, password));
-      if(result.erro){
+      if(!this.authService.error){
         this.onReset();
         this.rotas.navigate(['login']);
+        this.authService.logout();
         this.erro = false;
+        this.msgErro = '';
       }else{
         this.erro = true;
-        this.msgErro = result.message;
+        this.msgErro = this.authService.error;
       }
     } else {
       this.onReset();
+      this.erro = true;
+      this.msgErro = 'Todos os campos precisam ser preenchidos';
     }
   }
   

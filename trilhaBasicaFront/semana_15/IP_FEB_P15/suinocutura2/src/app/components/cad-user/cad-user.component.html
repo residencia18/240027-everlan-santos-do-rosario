@@ -1,52 +1,78 @@
+@if (!authService.currentUserSing()){
 <div class="corpo">
     <div class="col-md-offset-2 col-md-4">
         <h1 class='text-white'>Suinocultura</h1>
         <div class="container">
+            
             <form class="form-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <h4>Login</h4>
+                <h4>Cadastre-se</h4>
 
-                <input type="email" formControlName="email" id="email" class="form-control input chat-input" placeholder="Email" />
-                <span class="alert alert-danger" *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
-                        <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
-                        <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                <input type="email" formControlName="email" id="email" class="form-control input chat-input"
+                    placeholder="Email" />
+                <span class="alert alert-danger"
+                    *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
+                        class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                        <path
+                            d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
+                        <path
+                            d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
                     </svg>
                     Email é obrigatório.
                 </span>
 
-                <input type="password" formControlName="password" id="password" class="form-control input chat-input" placeholder="Senha" />
-                <span class="alert alert-danger" *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
-                        <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
-                        <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                <input type="password" formControlName="password" id="password" class="form-control input chat-input"
+                    placeholder="Senha" />
+                <span class="alert alert-danger"
+                    *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
+                        class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                        <path
+                            d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
+                        <path
+                            d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
                     </svg>
                     Senha é obrigatório.
                 </span>
 
-                <input type="password" formControlName="password2" id="password2" class="form-control input chat-input" placeholder="Repetir Senha" />
-                <span class="alert alert-danger" *ngIf="!loginForm.get('password2')?.valid && loginForm.get('password2')?.touched">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
-                        <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
-                        <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                <input type="password" formControlName="password2" id="password2" class="form-control input chat-input"
+                    placeholder="Repetir Senha" />
+                <span class="alert alert-danger"
+                    *ngIf="!loginForm.get('password2')?.valid && loginForm.get('password2')?.touched">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
+                        class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                        <path
+                            d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
+                        <path
+                            d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
                     </svg>
                     Senha é obrigatório.
                 </span>
 
+                <span class="alert alert-danger"
+                *ngIf="erro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
+                        class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                        <path
+                            d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
+                        <path
+                            d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                    </svg>
+                    {{msgErro}}
+                </span>
+
+                <!-- <div *ngIf="authService.error" class="alert alert-danger">{{authService.error}}</div> -->
                 <div class="wrapper">
                     <span class="group-btn">
-                        <button type="submit" class="btn btn-danger btn-lg">Cadastrar <i class="fa fa-paper-plane-o"></i></button>
+                        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-danger btn-lg">Cadastrar <i
+                                class="fa fa-paper-plane-o"></i></button>
                     </span>
-                </div>                
+                </div>
+                <div class="text-center link">
+                    <a routerLink="/login">Ja tenho uma conta !</a>
+                </div>
             </form>
-            <div class="text-center link">
-                <a href="login" class="text-white">login <i class="fa fa-long-arrow-right"></i></a>
-            </div>
-            <div *ngIf="erro" class="alert alert-danger" role="alert">{{msgErro}}</div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="col-md-offset-5 col-md-4 text-white">
-            <p>© Copyright Suinocultura {{currentYear}}</p>
-        </div>
-    </footer>
 </div>
+}

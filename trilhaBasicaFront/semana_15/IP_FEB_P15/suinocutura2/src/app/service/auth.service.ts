@@ -1,51 +1,130 @@
-import { Injectable } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from '@angular/fire/auth';
-import { error } from 'console';
+import { Injectable, inject, signal } from '@angular/core';
+import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, user } from '@angular/fire/auth';
+// import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
+// import { Observable } from 'rxjs';
+
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
+	auth = inject(Auth);
+	user$ = user(this.auth);
+	user: any;
+	error: any;
+	currentUserSing = signal<any | null | undefined>(undefined);
 
-	constructor(private auth: Auth) { }
+	// constructor(private auth: AngularFireAuth) { }
+
+	// get userOb(): Observable<any | null> {
+	// 	return this.auth.user;
+	// }
+
+	// isAuthenticated(): boolean {
+	// 	return this.auth.currentUser != null;
+	// }
+
+	// signIn(email: string, password: string): Promise<any> {
+	// 	return this.auth.signInWithEmailAndPassword(email, password)
+	// 		.then(() => this.user = this.auth.currentUser)
+	// 		.catch((error) => {
+	// 			switch (error.code) {
+	// 				case "auth/user-not-found":
+	// 					this.error = "Usuário não encontrado";
+	// 					break;
+	// 				case "auth/invalid-credential":
+	// 					this.error = "Credenciais inválidas";
+	// 					break;
+	// 				case "auth/wrong-password":
+	// 					this.error = "Email ou Senha incorreta";
+	// 					break;
+	// 				default:
+	// 					this.error = "Erro na autenticação";
+	// 			}
+	// 		})
+	// }
+
+	// logout(): Promise<void> {
+	// 	return this.auth.signOut();
+	// }
+
+	// signUp(email: string, password: string): Promise<any> {
+	// 	return this.auth.createUserWithEmailAndPassword(email, password)
+	// 		.catch((error) => {
+	// 			switch (error.code) {
+	// 				case "auth/email-already-in-use":
+	// 					this.error = "Email já existe";
+	// 					break;
+	// 				case "auth/invalid-email":
+	// 					this.error = "Email inválido";
+	// 					break;
+	// 				case "auth/weak-password":
+	// 					this.error = "Senha fraca";
+	// 					break;
+	// 				case "auth/wrong-password":
+	// 					this.error = "Email ou Senha incorreta";
+	// 					break;
+	// 				default:
+	// 					this.error = "Erro ao registrar";
+	// 			}
+	// 		})
+	// }
+
+	constructor(private router: Router) { }
 
 	signIn = async (email: string, password: string) => {
 		try {
 			const result = await signInWithEmailAndPassword(this.auth, email, password);
-			return result;
-		} catch (error: any) {			
-			return null;
+			this.user = result.user;
+			this.router.navigate(['/home']);
+		} catch (error: any) {
+			switch (error.code) {
+				case "auth/user-not-found":
+					this.error = "Usuário não encontrado";
+					break;
+				case "auth/invalid-credential":
+					this.error = "Credenciais inválidas";
+					break;
+				case "auth/wrong-password":
+					this.error = "Email ou Senha incorreta";
+					break;
+				default:
+					this.error = "Erro na autenticação";
+			}
 		}
+	}
+
+	logout = async () => {
+		await this.auth.signOut();
+		this.user = null;
+		this.router.navigate(['/login']);
 	}
 
 	signUp = async (email: string, password: string) => {
 		try {
 			const result = await createUserWithEmailAndPassword(this.auth, email, password);
-			const retorno ={
-				erro: false,
-				result: result,
-				code: null,
-				message: null
+			this.user = result.user;
+			this.router.navigate(['/login']);
+		}
+		catch (error: any) {
+			switch (error.code) {
+				case "auth/email-already-in-use":
+					this.error = "Email já existe";
+					break;
+				case "auth/invalid-email":
+					this.error = "Email inválido";
+					break;
+				case "auth/weak-password":
+					this.error = "Senha fraca";
+					break;
+				case "auth/wrong-password":
+					this.error = "Email ou Senha incorreta";
+					break;
+				default:
+					this.error = "Erro ao registrar";
 			}
-			return retorno;
-		} catch (err: any) {
-			const erro = {
-				message: err.message,
-				code: err.code,
-				erro: true
-			}
-			if (erro.code === 'auth/email-already-in-use') {
-				erro.message = 'Email ja existe';
-			}else if (erro.code === 'auth/invalid-email') {
-				erro.message = 'Email invalido';
-			}else if (erro.code === 'auth/weak-password') {
-				erro.message = 'A senha deve conter pelo menos 6 caracteres';
-			}else if (erro.code === 'auth/operation-not-allowed') {
-				erro.message = 'Operacao nao permitida';
-			}else{
-				erro.message = 'Erro ao registrar';
-			}
-			return erro;
+
 		}
 	}
 }
