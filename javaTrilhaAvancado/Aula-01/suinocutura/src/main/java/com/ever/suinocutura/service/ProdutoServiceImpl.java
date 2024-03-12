@@ -26,14 +26,19 @@ public class ProdutoServiceImpl implements ProdutoService {
 	}
 
 	@Override
-	public Optional<Produto> findById(Long id) {
-
-		return repository.findById(id);
+	public Produto findById(Long id) {
+		Optional<Produto> obj = repository.findById(id);		
+		return obj.get();
 	}
 
 	@Override
-	public Produto update(Produto produto) {
-		return repository.save(produto);
+	public Produto update(Long id ,Produto produto) {
+		Produto obj = repository.getReferenceById(id);
+		obj.setName(produto.getName());
+		obj.setAmount(produto.getAmount());
+		obj.setValue(produto.getValue());
+		obj.setDescription(produto.getDescription());
+		return repository.save(obj);
 	}
 
 	@Override
