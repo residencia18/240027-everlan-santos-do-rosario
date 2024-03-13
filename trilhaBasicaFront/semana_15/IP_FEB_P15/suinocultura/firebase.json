@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/suinocultura/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
