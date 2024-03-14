@@ -21,6 +21,8 @@ public class SecurityConfig {
 				.csrf(csrf -> csrf.disable())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authorizeHttpRequests(auth -> auth
+						.requestMatchers("/swagger-ui").permitAll()
+						.requestMatchers("/swagger-ui/**").permitAll()
 						.requestMatchers(HttpMethod.POST, "/login").permitAll()
 						.requestMatchers(HttpMethod.POST, "/register").permitAll()
 						.requestMatchers(HttpMethod.POST, "/produtos").hasRole("ADMIN")

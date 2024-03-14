@@ -28,14 +28,14 @@ public class AuthController {
 	private UserRepository repository;
 	
 	@PostMapping("/login")
-	public ResponseEntity login(@RequestBody @Valid AuthDTO authDTO) {
+	public ResponseEntity<?> login(@RequestBody @Valid AuthDTO authDTO) {
 		var usernamePassword = new UsernamePasswordAuthenticationToken(authDTO.login(), authDTO.password());
 		var auth = this.authenticationManager.authenticate(usernamePassword);
 		return ResponseEntity.ok().build();
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity register(@RequestBody @Valid RegisterDTO registerDTO) {
+	public ResponseEntity<?> register(@RequestBody @Valid RegisterDTO registerDTO) {
 		if(this.repository.findByLogin(registerDTO.login()) != null) {
 			return ResponseEntity.badRequest().build();
 		}

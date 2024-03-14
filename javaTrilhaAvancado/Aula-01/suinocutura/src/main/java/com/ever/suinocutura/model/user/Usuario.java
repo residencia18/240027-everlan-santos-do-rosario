@@ -11,26 +11,33 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name = "users")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Usuario implements UserDetails{
-		
+public class Usuario implements UserDetails {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Setter(AccessLevel.PROTECTED)
 	private Long id;
-	
+
 	private String login;
-	
+
 	private String password;
-	
+
 	private UserRole role;
-	
+
+	public Usuario() {
+
+	}
+
 	public Usuario(String login, String password, UserRole role) {
 		this.login = login;
 		this.password = password;
@@ -39,9 +46,9 @@ public class Usuario implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		if(this.role == UserRole.ADMIN) {
+		if (this.role == UserRole.ADMIN) {
 			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-		}else {
+		} else {
 			return List.of(new SimpleGrantedAuthority("ROLE_USER"), new SimpleGrantedAuthority("ROLE_USER"));
 		}
 	}
@@ -79,7 +86,5 @@ public class Usuario implements UserDetails{
 		// TODO Auto-generated method stub
 		return true;
 	}
-	
-	
-	
+
 }
