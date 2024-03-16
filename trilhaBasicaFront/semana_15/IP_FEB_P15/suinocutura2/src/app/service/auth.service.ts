@@ -98,7 +98,8 @@ export class AuthService {
 	logout = async () => {
 		await this.auth.signOut();
 		this.user = null;
-		this.router.navigate(['/login']);
+		this.currentUserSing.set(null);
+		this.error = null;
 	}
 
 	signUp = async (email: string, password: string) => {

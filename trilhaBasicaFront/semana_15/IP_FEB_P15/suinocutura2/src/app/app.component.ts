@@ -1,11 +1,12 @@
 import { Component} from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AuthService } from './service/auth.service';
 import { environment } from '../environments/environment';
+import { CadastroSuinoComponent } from './components/cadastro-suino/cadastro-suino.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,8 @@ import { environment } from '../environments/environment';
     CommonModule,
     RouterOutlet,
     FormsModule,
+    RouterLink,
+    CadastroSuinoComponent,
     AngularFireAuthModule,
     AngularFireModule
   ],
@@ -25,6 +28,20 @@ export class AppComponent {
   currentYear = new Date().getFullYear();
 
   constructor(public authService: AuthService, private rotas: Router) {
-    AngularFireModule.initializeApp(environment.firebaseConfig);
+    // AngularFireModule.initializeApp(environment.firebaseConfig);
+  }
+
+  ngOnInit() {
+    this.authService.user$.subscribe((user) => {
+      if (user) {
+        this.authService.currentUserSing.set(user);
+      }else {
+        this.authService.currentUserSing.set(null);
+      }
+    })
+  }
+
+  ngOnDestroy() {
+    this.authService.logout();
   }
 }
