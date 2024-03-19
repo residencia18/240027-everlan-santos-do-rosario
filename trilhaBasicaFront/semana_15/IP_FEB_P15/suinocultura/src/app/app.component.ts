@@ -22,6 +22,10 @@ export class AppComponent {
   constructor(public authService: AuthService) {
   }
 
+  ngOnInit() {
+    this.authService.logout();
+  }
+
   islogin() {
     if (this.authService.auth.currentUser) {
       this.username = this.authService.user?.email;

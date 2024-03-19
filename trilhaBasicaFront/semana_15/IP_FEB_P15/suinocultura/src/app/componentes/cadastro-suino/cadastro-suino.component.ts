@@ -19,23 +19,25 @@ import { SuinoService } from '../../service/suino.service';
   styleUrl: './cadastro-suino.component.css'
 })
 export class CadastroSuinoComponent {
-  ss = inject(SuinoService);
-  authService = inject(AuthService);
   formSuino: FormGroup;
   error: any;
 
-  constructor(private router: Router, private fb: FormBuilder) {
+  constructor(private router: Router, private fb: FormBuilder, private ss: SuinoService) {
     this.formSuino = this.fb.group({
       brincoAnimal: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       brincoPai: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-      brincoMae: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)], this.brincoMaeValidoValidator.bind(this), this.sexoMaeValidoValidator.bind(this)],
+      brincoMae: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       dataNascimento: ['', Validators.required],
       dataSaida: ['', Validators.required],
       status: ['', Validators.required],
       sexo: ['', Validators.required]
     });
   }
+  // , this.brincoMaeValidoValidator.bind(this), this.sexoMaeValidoValidator.bind(this)]
 
+  onReset() {
+    this.formSuino.reset();
+  }
   brincoMaeValidoValidator(control: any) {
     const brincoMae: any = this.ss.getSuino(control.value);
     if (brincoMae) {
@@ -47,32 +49,34 @@ export class CadastroSuinoComponent {
 
   sexoMaeValidoValidator(control: any) {
     const Mae: any = this.ss.getSuino(control.value);
-    if (Mae.sexo == 'F') {
+    if (Mae.sexo == 'Femea') {
       return { sexoMae: true };
     }else {
       return null;
     }
   }
 
-  ngOnInit() {
-    this.authService.user$.subscribe((user) => {
-      if (user) {
-        this.authService.currentUserSing.set(user);
-      }else {
-        this.authService.currentUserSing.set(null);
-      }
-    })
+  sexoPaiValidoValidator(control: any) {
+    const Pai: any = this.ss.getSuino(control.value);
+    if (Pai.sexo == 'Macho') {
+      return { sexoPai: true };
+    }else {
+      return null;
+    }
   }
 
   onSubmit() {
-    if (this.formSuino.valid && this.authService.currentUserSing()) {
+    if (this.formSuino.valid) {
       const suino: suinoModel = this.formSuino.value;
       this.ss.createSuino(suino);
       if (this.ss.error) {
         this.error = this.ss.error;
+        this.onReset();
+        this.router.navigate(['/cadastrosuino']);
       }else {
         this.error = null;
-        this.router.navigate(['/suinos']);
+        this.onReset();
+        this.router.navigate(['/cadastrosuino']);
       }
     }
   }
