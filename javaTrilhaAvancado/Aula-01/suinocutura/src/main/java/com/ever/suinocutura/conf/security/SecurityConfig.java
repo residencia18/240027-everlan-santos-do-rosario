@@ -26,15 +26,18 @@ public class SecurityConfig {
 		return http
 				.csrf(csrf -> csrf.disable())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//				.authorizeHttpRequests(auth -> auth
-//						.requestMatchers("/swagger-ui").permitAll()
-//						.requestMatchers("/swagger-ui/**").permitAll()
-//						.requestMatchers(HttpMethod.POST, "/login").permitAll()
-//						.requestMatchers(HttpMethod.POST, "/register").permitAll()
-//						.requestMatchers(HttpMethod.POST, "/produtos").hasRole("ADMIN")
-//						.anyRequest().authenticated()
-//				)
-//				.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
+				.authorizeHttpRequests(auth -> auth
+						.requestMatchers("/swagger-ui").permitAll()
+						.requestMatchers("/swagger-ui/**").permitAll()
+						.requestMatchers("/v3/api-docs/**").permitAll()
+						.requestMatchers("/swagger-ui/index.html").permitAll()
+						.requestMatchers("/v3/api-docs/swagger-config").permitAll()
+						.requestMatchers(HttpMethod.POST, "/login").permitAll()
+						.requestMatchers(HttpMethod.POST, "/register").permitAll()
+						.requestMatchers(HttpMethod.POST, "/produtos").hasRole("ADMIN")
+						.anyRequest().authenticated()
+				)
+				.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
 	}
 	

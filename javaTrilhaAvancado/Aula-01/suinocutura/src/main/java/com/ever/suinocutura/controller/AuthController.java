@@ -1,5 +1,6 @@
 package com.ever.suinocutura.controller;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +24,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/")
 public class AuthController {
 	
+	Logger log = org.slf4j.LoggerFactory.getLogger(AuthController.class);
+	
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
@@ -34,12 +37,11 @@ public class AuthController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody @Valid AuthDTO authDTO) {
-//		authDTO = new AuthDTO("juca", "123456789");
-//		System.out.println("Login: " + authDTO.login());
+		
 		var usernamePassword = new UsernamePasswordAuthenticationToken(authDTO.login(), authDTO.password());
-//		System.out.println("Credenciais: " + usernamePassword.getCredentials());
+		
 		var auth = this.authenticationManager.authenticate(usernamePassword);
-//		System.out.println("ESSE É o Usuario: " + auth.getPrincipal());
+		
 		var token = this.tokenService.generateToken((Usuario)auth.getPrincipal());
 		
 		return ResponseEntity.ok(new LoginResponseDTO(token));
