@@ -1,4 +1,4 @@
-package com.ever.suinocutura.service;
+package com.ever.suinocutura.service.authService;
 
 import java.util.Date;
 

@@ -18,25 +18,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "users")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Usuario implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Setter(AccessLevel.PROTECTED)
 	private Long id;
-
 	private String login;
-
 	private String password;
-
 	private UserRole role;
-
-	public Usuario() {
-
-	}
+	
 
 	public Usuario(String login, String password, UserRole role) {
 		this.login = login;
@@ -51,11 +46,6 @@ public class Usuario implements UserDetails {
 		} else {
 			return List.of(new SimpleGrantedAuthority("ROLE_USER"), new SimpleGrantedAuthority("ROLE_USER"));
 		}
-	}
-
-	@Override
-	public String getPassword() {
-		return this.password;
 	}
 
 	@Override

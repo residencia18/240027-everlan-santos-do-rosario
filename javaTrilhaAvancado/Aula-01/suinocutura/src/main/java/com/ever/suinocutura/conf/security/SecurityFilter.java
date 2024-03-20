@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.ever.suinocutura.repository.UserRepository;
-import com.ever.suinocutura.service.TokenService;
+import com.ever.suinocutura.service.authService.TokenService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

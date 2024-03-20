@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ever.suinocutura.model.Produto;
-import com.ever.suinocutura.service.ProdutoService;
+import com.ever.suinocutura.service.produtoService.ProdutoService;
 
 @RestController
 @RequestMapping("/produtos")

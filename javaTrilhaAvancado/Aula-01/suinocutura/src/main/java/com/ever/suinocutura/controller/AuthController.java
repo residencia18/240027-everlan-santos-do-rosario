@@ -16,7 +16,7 @@ import com.ever.suinocutura.controller.dto.LoginResponseDTO;
 import com.ever.suinocutura.controller.dto.RegisterDTO;
 import com.ever.suinocutura.model.user.Usuario;
 import com.ever.suinocutura.repository.UserRepository;
-import com.ever.suinocutura.service.TokenService;
+import com.ever.suinocutura.service.authService.TokenService;
 
 import jakarta.validation.Valid;
 

@@ -1,84 +1,37 @@
 package com.ever.suinocutura.model;
 
-import lombok.Data;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+// importes lombok
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@ToString
+@Getter
+@Setter
 @Entity
 public class Produto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private String name;
+	private Long id;
 
-    private String description;
+	private String name;
 
-    private Double value;
+	private String description;
 
-    private Integer amount;
-    
-    public Produto() {
-	    
-    }
-    
-	public Produto(String name, String description, Double value, Integer amount) {
-		this.name = name;
-		this.description = description;
-		this.value = value;
-		this.amount = amount;
-	}
+	private Double value;
 
-	public Long getId() {
-		return id;
-	}
+	private Integer amount;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Double getValue() {
-		return value;
-	}
-
-	public void setValue(Double value) {
-		this.value = value;
-	}
-
-	public Integer getAmount() {
-		return amount;
-	}
-
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-	}
-
-	@Override
-	public String toString() {
-		return "Produto [id=" + id + ", name=" + name + ", description=" + description + ", value=" + value
-				+ ", amount=" + amount + "]";
-	}
-	
-	
 }

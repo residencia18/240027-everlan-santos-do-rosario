@@ -1,4 +1,4 @@
-package com.ever.suinocutura.service;
+package com.ever.suinocutura.service.authService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

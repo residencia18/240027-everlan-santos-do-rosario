@@ -1,4 +1,4 @@
-package com.ever.suinocutura.service;
+package com.ever.suinocutura.service.produtoService;
 
 import java.util.List;
 import com.ever.suinocutura.model.Produto;
