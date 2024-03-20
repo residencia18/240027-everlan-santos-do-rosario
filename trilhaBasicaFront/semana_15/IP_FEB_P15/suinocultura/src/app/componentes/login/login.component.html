@@ -1,8 +1,8 @@
 @if (!authService.auth.currentUser){
-    <div class="corpo">
+    <div class="corpo container-lg">
         <div class="col-md-offset-2 col-md-4">
             <div class="container">
-                <form class="form-login" [formGroup]="loginForm">
+                <form class="form form-login" [formGroup]="loginForm">
                     <h4>Login</h4>
                     <input type="email" formControlName="email" id="email" class="form-control input chat-input"
                         placeholder="Email" />

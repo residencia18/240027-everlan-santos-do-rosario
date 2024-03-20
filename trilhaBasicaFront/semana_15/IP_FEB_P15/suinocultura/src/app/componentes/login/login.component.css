@@ -14,40 +14,7 @@
       opacity: 1; /* Firefox */
       font-size:20px!important;
   }
-  .form-login {
-      background-color: rgba(0,0,0,0.55);
-      height: auto;
-      /* margin-top: 30px; */
-      padding-top: 10px;
-      padding-bottom: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-      border-radius: 15px;
-      border-color:#d2d2d2;
-      border-width: 5px;
-      color:white;
-      box-shadow:0 1px 0 #cfcfcf;
-      align-items: center;
-  }
-  .form-login input {
-      height: 50px;
-      margin-top: 4%;
-  }
-  .form-login button {
-      margin-top: 4%;
-  }
-  .form-login a {
-      margin-left: 20px;
-  }
-  .link{
-      margin-top: 4%;
-  }
-  .form-control{
-      background:transparent!important;
-      color:white!important;
-      font-size: 20px!important;
-      text-align: center;
-  }
+
   h1{
       color:white!important;
       font-size: 60px!important;
@@ -60,20 +27,3 @@
    font-size: 30px;
   }
   
-  .form-control {
-      border-radius: 10px;
-  }
-  .text-white{
-      color: white!important;
-  }
-  .wrapper {
-      text-align: center;
-  }
-  .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;    
-  }
-  .footer p{
-    font-size: 20px;
- }

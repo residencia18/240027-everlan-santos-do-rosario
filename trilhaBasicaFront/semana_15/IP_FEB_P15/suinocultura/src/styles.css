@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: linear-gradient(45deg, rgba(116, 15, 214, 0.9)  0%, rgba(86, 58, 250, 0.9) 100%), url("/assets/img/hero-bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+/*--------------------------------------------------------------
+    # Form
+    --------------------------------------------------------------*/
+
+    .form-login {
+        background-color: rgba(0,0,0,0.55);
+        height: auto;
+        /* margin-top: 30px; */
+        padding-top: 10px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 15px;
+        border-color:#d2d2d2;
+        border-width: 5px;
+        color:white;
+        box-shadow:0 1px 0 #cfcfcf;
+        align-items: center;
+    }
+    .form-login input {
+        height: 50px;
+        margin-top: 4%;
+    }
+    .form-login button {
+        margin-top: 4%;
+    }
+    .form-login a {
+        margin-left: 20px;
+    }
+    .link{
+        margin-top: 4%;
+    }
+    .form-control{
+        background:transparent!important;
+        color:white!important;
+        font-size: 20px!important;
+        text-align: center;
+    }
+
+    .form-control {
+        border-radius: 10px;
+    }
+    .text-white{
+        color: white!important;
+    }
+    .wrapper {
+        text-align: center;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;    
+    }
+    .footer p{
+      font-size: 20px;
+   }
