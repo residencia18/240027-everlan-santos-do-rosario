@@ -1,7 +1,8 @@
-package com.ever.suinocutura.model;
+package com.ever.suinocutura.model.carrinho;
 
 import java.util.List;
 
+import com.ever.suinocutura.model.prouto.Produto;
 import com.ever.suinocutura.model.user.Usuario;
 
 import jakarta.persistence.CascadeType;
@@ -35,11 +36,12 @@ public class Carrinho {
 	private Long id;
 	
 	@ManyToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
     @JoinTable(name = "CARRINHO_PRODUTO", joinColumns = @JoinColumn(name = "carrinho_id"), inverseJoinColumns = @JoinColumn(name = "produto_id"))
 	private List<Produto> produtos;
 	
-	private String status;
+	private StatusCarrinho status;
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ever.suinocutura.model.Produto;
+import com.ever.suinocutura.model.prouto.Produto;
 import com.ever.suinocutura.repository.ProdutoRepository;
 
 @Service

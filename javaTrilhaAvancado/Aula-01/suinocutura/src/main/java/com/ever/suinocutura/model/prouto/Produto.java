@@ -1,4 +1,4 @@
-package com.ever.suinocutura.model;
+package com.ever.suinocutura.model.prouto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

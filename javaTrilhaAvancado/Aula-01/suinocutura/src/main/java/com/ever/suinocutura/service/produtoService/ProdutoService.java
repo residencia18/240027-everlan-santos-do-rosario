@@ -1,7 +1,8 @@
 package com.ever.suinocutura.service.produtoService;
 
 import java.util.List;
-import com.ever.suinocutura.model.Produto;
+
+import com.ever.suinocutura.model.prouto.Produto;
 
 public interface ProdutoService {
 	
