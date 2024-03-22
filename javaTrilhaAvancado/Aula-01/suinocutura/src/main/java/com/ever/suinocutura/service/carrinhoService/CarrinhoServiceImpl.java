@@ -2,38 +2,40 @@ package com.ever.suinocutura.service.carrinhoService;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.ever.suinocutura.model.carrinho.Carrinho;
+import com.ever.suinocutura.repository.CarrinhoRepository;
 
 public class CarrinhoServiceImpl implements CarrinhoService{
+	
+	@Autowired
+	CarrinhoRepository carrinhoRepository;
 
 	@Override
 	public Carrinho save(Carrinho carrinho) {
-		// TODO Auto-generated method stub
-		return null;
+		return carrinhoRepository.save(carrinho);
 	}
 
 	@Override
 	public List<Carrinho> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return carrinhoRepository.findAll();
 	}
 
 	@Override
 	public Carrinho findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return carrinhoRepository.findById(id).get();
 	}
 
 	@Override
 	public Carrinho update(Long id, Carrinho carrinho) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return carrinhoRepository.save(carrinho);
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
+		carrinhoRepository.deleteById(id);
 	}
 	
 	

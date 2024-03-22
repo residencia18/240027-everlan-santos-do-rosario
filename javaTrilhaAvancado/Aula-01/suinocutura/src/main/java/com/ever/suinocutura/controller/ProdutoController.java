@@ -41,6 +41,9 @@ public class ProdutoController {
 	public ResponseEntity<Produto> findById(@PathVariable Long id){
 		try {
 			Produto obj = service.findById(id);
+			if(obj == null) {
+				return ResponseEntity.notFound().build();
+			}
 			return ResponseEntity.ok(obj);
 		}catch (Exception e){
 			return ResponseEntity.badRequest().build();
