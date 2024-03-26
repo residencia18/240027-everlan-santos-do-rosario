@@ -11,6 +11,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,8 +31,11 @@ public class Usuario implements UserDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Setter(AccessLevel.PROTECTED)
 	private Long id;
+	@Email(message = "Email should be valid")
 	private String login;
+	@Size(min = 8, max = 13, message = "Password should be between 8 and 13 characters")
 	private String password;
+	@NotNull(message = "Role should not be null")
 	private UserRole role;
 	
 
