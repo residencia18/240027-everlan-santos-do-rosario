@@ -1,0 +1,29 @@
+.corpo {
+    /* background-image:url('https://i.redd.it/o8dlfk93azs31.jpg'); */
+    background-position:center;
+    background-size:cover;
+    height: 50vh;
+    
+    -webkit-font-smoothing: antialiased;
+    font: normal 20px Roboto,arial,sans-serif;
+    font-family: 'Dancing Script', cursive!important;
+  }
+  
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #ffffff!important;
+      opacity: 1; /* Firefox */
+      font-size:20px!important;
+  }
+
+  h1{
+      color:white!important;
+      font-size: 60px!important;
+  }
+  h4 { 
+   border:0 solid #fff; 
+   border-bottom-width:1px;
+   padding-bottom:10px;
+   text-align: center;
+   font-size: 30px;
+  }
+  
